@@ -56,7 +56,7 @@ final class Registry
     /**
      * Prevent from being unserialized (which would create a second instance of it)
      */
-    private function __wakeup(): void
+    private function __wakeup()
     {
     }
 
