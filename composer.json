@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": "^7.3 || ^8.0",
-        "atomastic/arrays": "*"
+        "atomastic/arrays": "dev-dev"
     },
     "autoload":{
         "psr-4": {

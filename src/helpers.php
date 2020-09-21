@@ -6,9 +6,7 @@ use Atomastic\Registry\Registry;
 
 if (! function_exists('registry')) {
     /**
-     * Create a new arrayable object from the given elements.
-     *
-     * Initializes a Arrays object and assigns $items the supplied values.
+     * Gets the instance via lazy initialization (created on first usage)
      */
     function registry(): Registry
     {

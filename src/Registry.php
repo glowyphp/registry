@@ -27,15 +27,15 @@ final class Registry
      */
     public static function getInstance(): Registry
     {
-      if (static::$instance === null) {
-          static::$instance = new static();
-      }
+        if (static::$instance === null) {
+            static::$instance = new static();
+        }
 
-      if (static::$data === null) {
-          static::$data = new Arrays();
-      }
+        if (static::$data === null) {
+            static::$data = new Arrays();
+        }
 
-      return static::$instance;
+        return static::$instance;
     }
 
     /**
@@ -56,7 +56,7 @@ final class Registry
     /**
      * Prevent from being unserialized (which would create a second instance of it)
      */
-    private function __wakeup()
+    private function __wakeup(): void
     {
     }
 
@@ -76,49 +76,55 @@ final class Registry
     }
 
     /**
-     * Checks if the given dot-notated key exists in the array.
+     * Determine if the registry has a value for the given name.
      *
-     * @param  string|array $keys Keys
+     * @param  string|array $keys The keys of the registry item to check for existence.
      */
     public function has($keys): bool
     {
+        if (static::$data->has($keys)) {
+            return true;
+        }
 
+        return false;
     }
 
     /**
-     * Get an item from an array using "dot" notation.
+     * Get item from the registry.
      *
-     * @param  string|int|null $key     Key
-     * @param  mixed           $default Default
+     * @param  string $key     The name of the item to fetch.
+     * @param  mixed  $default Default value
      */
-    public function get($key, $default = null)
+    public function get(string $key, $default = null)
     {
-
+        return static::$data->get($key, $default);
     }
 
     /**
-     * Deletes an array value using "dot notation".
+     * Delete a items from the registry.
      *
      * @param  array|string $keys Keys
      */
     public function delete($keys): self
     {
+        static::$data->delete($keys);
 
+        return $this;
     }
 
     /**
-     * Flush all values from the array.
+     * Flush all items from the registry.
      */
     public function flush(): void
     {
-        $this->data = [];
+        static::$data = null;
     }
 
     /**
-     *  Get all items from stored array.
+     * Get all items from the registry.
      */
     public function all(): array
     {
-        return $this->data;
+        return static::$data->all();
     }
 }

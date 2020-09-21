@@ -26,13 +26,10 @@ composer require atomastic/registry
 ```php
 use Atomastic\Registry\Registry;
 
-// Using public method __construct()
-$registry = new Registry();
+// Using public static method getInstance()
+$registry = Registry::getInstance();
 
-// Using public static method create()
-$registry = Registry::create();
-
-// Using global helper function registry()
+// Using global helper function registry() thats returns Registry::getInstance()
 $registry = registry();
 ```
 
@@ -40,51 +37,38 @@ $registry = registry();
 
 | Method | Description |
 |---|---|
-| <a href="#registry_create">`create()`</a> | Create a new registry object from the given elements. Initializes a Registry object and assigns $items the supplied values. |
-| <a href="#registry_set">`set()`</a> | Set an array item to a given value using "dot" notation. If no key is given to the method, the entire array will be replaced. |
-| <a href="#registry_get">`get()`</a> | Get an item from an array using "dot" notation. |
-| <a href="#registry_has">`has()`</a> | Checks if the given dot-notated key exists in the array. |
-| <a href="#registry_delete">`delete()`</a> | Deletes an array value using "dot notation".|
-| <a href="#registry_all">`all()`</a> | Get all items from stored array. |
-| <a href="#registry_flush">`flush()`</a> | Flush all values from the array. |
+| <a href="#registry_getInstance">`getInstance()`</a> | Gets the instance via lazy initialization (created on first usage) |
+| <a href="#registry_set">`set()`</a> | Set an registry data to a given value using "dot" notation. If no key is given to the method, the entire registry data will be replaced. |
+| <a href="#registry_get">`get()`</a> | Get item from the registry. |
+| <a href="#registry_has">`has()`</a> | Determine if the registry has a value for the given name. |
+| <a href="#registry_delete">`delete()`</a> | Get item from the registry. |
+| <a href="#registry_all">`all()`</a> | Get all items from the registry. |
+| <a href="#registry_flush">`flush()`</a> | Flush all items from the registry. |
 
 #### Methods Details
 
-##### <a name="registry_create"></a> Method: `create()`
+##### <a name="registry_getInstance"></a> Method: `getInstance()`
 
 ```php
 /**
- * Create a new arrayable object from the given elements.
- *
- * Initializes a Registry object and assigns $items the supplied values.
- *
- * @param mixed $items Elements
+ * Gets the instance via lazy initialization (created on first usage)
  */
-public static function create(array $items = []): Registry
+public static function getInstance(): Registry
 ```
 
 **Examples**
 
 ```php
-$registry = Registry::create([
-                        'movies' => [
-                           'the_thin_red_line' => [
-                               'title' => 'The Thin Red Line',
-                               'directed_by' => 'Terrence Malick',
-                               'produced_by' => 'Robert Michael, Geisler Grant Hill, John Roberdeau',
-                               'decription' => 'Adaptation of James Jones autobiographical 1962 novel, focusing on the conflict at Guadalcanal during the second World War.'
-                           ]
-                        ]
-                    ]);
+$registry = Registry::getInstance();
 ```
 
 ##### <a name="registry_set"></a> Method: `set()`
 
 ```php
 /**
- * Set an array item to a given value using "dot" notation.
+ * Set an registry data to a given value using "dot" notation.
  *
- * If no key is given to the method, the entire array will be replaced.
+ * If no key is given to the method, the entire registry data will be replaced.
  *
  * @param  string $key   Key
  * @param  mixed  $value Value
@@ -102,12 +86,12 @@ $registry->set('movies.the-thin-red-line.title', 'The Thin Red Line');
 
 ```php
 /**
- * Get an item from an array using "dot" notation.
+ * Get item from the registry.
  *
- * @param  string|int|null $key     Key
- * @param  mixed           $default Default
+ * @param  string $key     The name of the item to fetch.
+ * @param  mixed  $default Default value
  */
-public function get($key, $default = null)
+public function get(string $key, $default = null)
 ```
 
 **Examples**
@@ -120,9 +104,9 @@ $registry->set('movies.the-thin-red-line.title', 'The Thin Red Line');
 
 ```php
 /**
- * Checks if the given dot-notated key exists in the array.
+ * Determine if the registry has a value for the given name.
  *
- * @param  string|array $keys Keys
+ * @param  string|array $keys The keys of the registry item to check for existence.
  */
 public function has($keys): bool
 ```
@@ -139,7 +123,7 @@ if ($registry->has('movies.the-thin-red-line')) {
 
 ```php
 /**
- * Deletes an array value using "dot notation".
+ * Delete a items from the registry.
  *
  * @param  array|string $keys Keys
  */
@@ -152,43 +136,11 @@ public function delete($keys): self
 $registry->delete('movies.the-thin-red-line');
 ```
 
-##### <a name="registry_dot"></a> Method: `dot()`
-
-```php
-/**
- * Flatten a multi-dimensional associative array with dots.
- *
- * @param  string $prepend Prepend string
- */
-public function dot(string $prepend = ''): self
-```
-
-**Examples**
-
-```php
-$registry->dot();
-```
-
-##### <a name="registry_undot"></a> Method: `undot()`
-
-```php
-/**
- * Expands a dot notation array into a full multi-dimensional array.
- */
-public function undot(): self
-```
-
-**Examples**
-
-```php
-$registry->undot();
-```
-
 ##### <a name="registry_all"></a> Method: `all()`
 
 ```php
 /**
- *  Get all items from stored array.
+ * Get all items from the registry.
  */
 public function all(): array
 ```
@@ -205,7 +157,7 @@ foreach ($registry->all() as $key => $value) {
 
 ```php
 /**
- * Flush all values from the array.
+ * Flush all items from the registry.
  */
 public function flush(): void
 ```
@@ -214,54 +166,6 @@ public function flush(): void
 
 ```php
 $registry->flush();
-```
-
-##### <a name="registry_sortAssoc"></a> Method: `sortAssoc()`
-
-```php
-/**
- * Sorts a multi-dimensional associative array by a certain field.
- *
- * @param  string $field      The name of the field path
- * @param  string $direction  Order type DESC (descending) or ASC (ascending)
- * @param  const  $sort_flags A PHP sort method flags.
- */
-public function sortAssoc(string $field, string $direction = 'ASC', $sort_flags = SORT_REGULAR): self
-```
-
-**Examples**
-
-```php
-$result = Registry::create([1 => ['title' => 'Post 2'],
-                          0 => ['title' => 'Post 1']])->sortAssoc('title', 'ASC')->all();
-
-$result = Registry::create([1 => ['title' => 'Post 2'],
-                          0 => ['title' => 'Post 1']])->sortAssoc('title', 'DESC')->all();
-```
-
-##### <a name="registry_count"></a> Method: `count()`
-
-```php
-/**
- * Return the number of items in a given key.
- *
- * @param  int|string|null $key
- */
-public function count($key = null): int
-```
-
-**Examples**
-
-```php
-$result = Registry::create(['Jack', 'Daniel', 'Sam'])->count();
-
-$result = Registry::create(['names' => ['Jack', 'Daniel', 'Sam']])->count();
-
-$result = Registry::create(['names' => ['Jack', 'Daniel', 'Sam'],
-                          'tags' => ['star', 'movie']])->count('tags');
-
-$result = Registry::create(['collection' => ['names' => ['Jack', 'Daniel', 'Sam'],
-                                           'tags' => ['star', 'movie']]])->count('collection.tags');
 ```
 
 ### Tests
