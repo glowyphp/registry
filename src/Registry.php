@@ -16,11 +16,11 @@ final class Registry
     private static $instance = null;
 
     /**
-     * Registry data
+     * Registry storage
      *
      * @var Arrays
      */
-    private static $data = null;
+    private static $storage = null;
 
     /**
      * Gets the instance via lazy initialization (created on first usage)
@@ -31,8 +31,8 @@ final class Registry
             static::$instance = new static();
         }
 
-        if (static::$data === null) {
-            static::$data = new Arrays();
+        if (static::$storage === null) {
+            static::$storage = new Arrays();
         }
 
         return static::$instance;
@@ -71,7 +71,7 @@ final class Registry
      */
     public function set(string $key, $value): self
     {
-         static::$data->set($key, $value);
+         static::$storage->set($key, $value);
 
          return $this;
     }
@@ -83,7 +83,7 @@ final class Registry
      */
     public function has($keys): bool
     {
-        if (static::$data->has($keys)) {
+        if (static::$storage->has($keys)) {
             return true;
         }
 
@@ -98,7 +98,7 @@ final class Registry
      */
     public function get(string $key, $default = null)
     {
-        return static::$data->get($key, $default);
+        return static::$storage->get($key, $default);
     }
 
     /**
@@ -108,7 +108,7 @@ final class Registry
      */
     public function delete($keys): self
     {
-        static::$data->delete($keys);
+        static::$storage->delete($keys);
 
         return $this;
     }
@@ -118,7 +118,7 @@ final class Registry
      */
     public function flush(): void
     {
-        static::$data = null;
+        static::$storage = null;
     }
 
     /**
@@ -126,6 +126,6 @@ final class Registry
      */
     public function all(): array
     {
-        return static::$data->all();
+        return static::$storage->all();
     }
 }
