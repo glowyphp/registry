@@ -1,7 +1,8 @@
 <h1 align="center">Registry Component</h1>
 
 <p align="center">
-<a href="https://github.com/atomastic/registry/releases"><img alt="Version" src="https://img.shields.io/github/release/atomastic/registry.svg?label=version&color=green"></a> <a href="https://github.com/atomastic/registry"><img src="https://img.shields.io/badge/license-MIT-blue.svg?color=green" alt="License"></a> <a href="https://github.com/atomastic/registry"><img src="https://img.shields.io/github/downloads/atomastic/registry/total.svg?color=green" alt="Total downloads"></a> <img src="https://github.com/atomastic/registry/workflows/Static%20Analysis/badge.svg?branch=dev"> <img src="https://github.com/atomastic/registry/workflows/Tests/badge.svg">
+<a href="https://github.com/atomastic/registry/releases"><img alt="Version" src="https://img.shields.io/github/release/atomastic/registry.svg?label=version&color=green"></a> <a href="https://github.com/atomastic/registry"><img src="https://img.shields.io/badge/license-MIT-blue.svg?color=green" alt="License"></a> <a href="https://github.com/atomastic/registry"><img src="https://img.shields.io/github/downloads/atomastic/registry/total.svg?color=green" alt="Total downloads"></a> <a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fatomastic%2Fregistry?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fatomastic%2Fregistry.svg?type=shield"/></a>
+<img src="https://github.com/atomastic/registry/workflows/Static%20Analysis/badge.svg?branch=dev"> <img src="https://github.com/atomastic/registry/workflows/Tests/badge.svg">
   <a href="https://app.codacy.com/gh/atomastic/registry?utm_source=github.com&utm_medium=referral&utm_content=atomastic/registry&utm_campaign=Badge_Grade_Dashboard"><img src="https://api.codacy.com/project/badge/Grade/72b4dc84c20145e1b77dc0004a3c8e3d"></a>
 </p>
 
@@ -179,3 +180,6 @@ Run tests
 ### License
 [The MIT License (MIT)](https://github.com/atomastic/registry/blob/master/LICENSE.txt)
 Copyright (c) 2020 [Sergey Romanenko](https://github.com/Awilum)
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fatomastic%2Fregistry.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fatomastic%2Fregistry?ref=badge_large)
