@@ -1,6 +1,6 @@
 <h1 align="center">Registry Component</h1>
 <p align="center">
-Registry component provides a mechanism for storing data globally in a well managed fashion, helping to prevent global meltdown.
+Registry Component provides a fluent, object-oriented interface for storing data globally in a well managed fashion, helping to prevent global meltdown.
 </p>
 <p align="center">
 <a href="https://github.com/atomastic/registry/releases"><img alt="Version" src="https://img.shields.io/github/release/atomastic/registry.svg?label=version&color=green"></a> <a href="https://github.com/atomastic/registry"><img src="https://img.shields.io/badge/license-MIT-blue.svg?color=green" alt="License"></a> <a href="https://github.com/atomastic/registry"><img src="https://img.shields.io/github/downloads/atomastic/registry/total.svg?color=green" alt="Total downloads"></a> <img src="https://github.com/atomastic/registry/workflows/Static%20Analysis/badge.svg?branch=dev"> <img src="https://github.com/atomastic/registry/workflows/Tests/badge.svg">
