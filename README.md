@@ -99,7 +99,7 @@ public function get(string $key, $default = null)
 **Examples**
 
 ```php
-$registry->set('movies.the-thin-red-line.title', 'The Thin Red Line');
+$title = $registry->get('movies.the-thin-red-line.title', 'The Thin Red Line');
 ```
 
 ##### <a name="registry_has"></a> Method: `has()`
