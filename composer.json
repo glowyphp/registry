@@ -1,6 +1,6 @@
 {
     "name": "atomastic/registry",
-    "description": "Registry Component contains methods that can be useful when working with registry.",
+    "description": "Registry Component provides a fluent, object-oriented interface for storing data globally in a well managed fashion, helping to prevent global meltdown.",
     "license": "MIT",
     "keywords": [
         "Registry", "registry", "php-registry", "php", "atomastic"
@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": "^7.3 || ^8.0",
-        "atomastic/arrays": "dev-dev"
+        "atomastic/arrays": "^1.0"
     },
     "autoload":{
         "psr-4": {
