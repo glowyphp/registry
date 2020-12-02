@@ -96,7 +96,7 @@ final class Registry
     /**
      * Get item from the registry.
      *
-     * @param  string $key     The name of the item to fetch.
+     * @param  string $key     The keys of the registry item to get.
      * @param  mixed  $default Default value
      */
     public function get(string $key, $default = null)
@@ -107,7 +107,7 @@ final class Registry
     /**
      * Delete a items from the registry.
      *
-     * @param  array|string $keys Keys
+     * @param  array|string $keys Keys.
      */
     public function delete($keys): self
     {
