@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Atomastic\Registry;
 
 use Atomastic\Arrays\Arrays;
+use Exception;
 
 final class Registry
 {
@@ -60,7 +61,7 @@ final class Registry
      */
     public function __wakeup()
     {
-        throw new \Exception("Cannot unserialize a Registry.");
+        throw new Exception("Cannot unserialize a Registry.");
     }
 
     /**
