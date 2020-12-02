@@ -4,7 +4,7 @@ on: ['push', 'pull_request']
 
 jobs:
   build:
-
+    name: PHP ${{ matrix.php }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -20,13 +20,14 @@ jobs:
       with:
         php-version: ${{ matrix.php }}
         tools: composer:v2
-        coverage: none
+        extensions: json, mbstring
+        coverage: xdebug
 
     - name: Setup Problem Matches
       run: |
         echo "::add-matcher::${{ runner.tool_cache }}/php.json"
         echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
-        
+
     - name: Install PHP 7 dependencies
       run: composer update  --dev --${{ matrix.dependency-version }} --no-interaction --no-progress
       if: "matrix.php < 8"
@@ -35,5 +36,5 @@ jobs:
       run: composer update  --dev --${{ matrix.dependency-version }} --ignore-platform-req=php --no-interaction --no-progress
       if: "matrix.php >= 8"
 
-    - name: Run Tests
-      run: ./vendor/bin/pest
+    - name: Run Tests with Coverage
+      run: ./vendor/bin/pest --coverage
