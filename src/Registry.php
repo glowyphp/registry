@@ -44,6 +44,7 @@ final class Registry
      */
     protected function __construct()
     {
+        throw new Exception("Cannot create a new Registry.");
     }
 
     /**
@@ -51,6 +52,7 @@ final class Registry
      */
     protected function __clone()
     {
+        throw new Exception("Cannot clone a Registry.");
     }
 
     /**
