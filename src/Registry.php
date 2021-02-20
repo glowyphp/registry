@@ -55,6 +55,5 @@ final class Registry extends Arrays
      */
     public function __wakeup(): void
     {
-        throw new Exception('Cannot unserialize a Registry.');
     }
 }
