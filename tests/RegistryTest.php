@@ -5,51 +5,29 @@ declare(strict_types = 1);
 use Atomastic\Registry\Registry;
 
 test('test getInstance() method', function() {
-    $this->assertEquals(Registry::getInstance(), Registry::getInstance());
+    $this->assertInstanceOf(Registry::class, Registry::getInstance());
 });
 
 test('test registry() helper', function() {
     $this->assertEquals(Registry::getInstance(), registry());
+    $this->assertInstanceOf(Registry::class, registry());
 });
 
-test('test set() method', function() {
-    Registry::getInstance()->set('movies.the-thin-red-line.title', 'The Thin Red Line');
+test('test registry uniqueness', function() {
+    $firstCall = Registry::getInstance();
+    $secondCall = Registry::getInstance();
 
-    $this->assertEquals('The Thin Red Line',
-                        Registry::getInstance()->get('movies.the-thin-red-line.title'));
+    $this->assertInstanceOf(Registry::class, $firstCall);
+    $this->assertSame($firstCall, $secondCall);
 });
 
-test('test get() method', function() {
-    Registry::getInstance()->set('movies.the-thin-red-line.title', 'The Thin Red Line');
+test('test macro() method', function (): void {
+    Registry::getInstance()->set('foo', 'bar');
 
-    $this->assertEquals('The Thin Red Line',
-                        Registry::getInstance()->get('movies.the-thin-red-line.title'));
-});
+    Registry::macro('customMethod', function() {
+        return $this->count();
+    });
 
-test('test has() method', function() {
-    $this->assertTrue(Registry::getInstance()->has('movies.the-thin-red-line.title'));
-    $this->assertFalse(Registry::getInstance()->has('movies.the-thin-red-line.description'));
-});
-
-test('test all() method', function() {
-    $this->assertEquals(['movies' => ['the-thin-red-line' => ['title' => 'The Thin Red Line']]],Registry::getInstance()->all());
-});
-
-test('test delete() method', function() {
-    Registry::getInstance()->delete('movies.the-thin-red-line.title');
-
-    $this->assertFalse(Registry::getInstance()->has('movies.the-thin-red-line.title'));
-});
-
-test('test flush() method', function() {
-    Registry::getInstance()->set('movies.the-thin-red-line.title', 'The Thin Red Line')
-                           ->set('movies.the-thin-red-line.description', 'Lorem ipsum dolor sit amet');
-
-    $this->assertTrue(Registry::getInstance()->has('movies.the-thin-red-line'));
-    $this->assertEquals(null, Registry::getInstance()->flush());
-
-    Registry::getInstance()->set('movies.the-thin-red-line.title', 'The Thin Red Line')
-                           ->set('movies.the-thin-red-line.description', 'Lorem ipsum dolor sit amet');
-
-    $this->assertTrue(Registry::getInstance()->has('movies.the-thin-red-line'));
+    $registry = Registry::getInstance();
+    $this->assertEquals(1, $registry->customMethod());
 });
