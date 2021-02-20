@@ -20,3 +20,14 @@ test('test registry uniqueness', function() {
     $this->assertInstanceOf(Registry::class, $firstCall);
     $this->assertSame($firstCall, $secondCall);
 });
+
+test('test macro() method', function (): void {
+    Registry::getInstance()->set('foo', 'bar');
+
+    Registry::macro('customMethod', function() {
+        return $this->count();
+    });
+
+    $registry = Registry::getInstance();
+    $this->assertEquals(1, $registry->customMethod());
+});
