@@ -5,10 +5,13 @@ declare(strict_types=1);
 namespace Atomastic\Registry;
 
 use Atomastic\Arrays\Arrays;
+use Atomastic\Macroable\Macroable;
 use Exception;
 
-final class Registry extends Arrays
+class Registry extends Arrays
 {
+    use Macroable;
+
     /**
      * Registry instance
      */
@@ -25,7 +28,7 @@ final class Registry extends Arrays
     public static function getInstance(): Registry
     {
         if (static::$instance === null) {
-            static::$instance = new static();
+            static::$instance = new self();
         }
 
         if (static::$storage === null) {
