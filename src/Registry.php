@@ -37,7 +37,7 @@ class Registry extends Arrays
 
     /**
      * Is not allowed to call from outside to prevent from creating multiple instances,
-     * to use the singleton, you have to obtain the instance from Singleton::getInstance() instead
+     * to use the Registry, you have to obtain the instance from Registry::getInstance() instead.
      */
     protected function __construct()
     {
