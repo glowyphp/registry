@@ -7,7 +7,7 @@ namespace Atomastic\Registry;
 use Atomastic\Arrays\Arrays;
 use Exception;
 
-class Registry extends Arrays
+final class Registry extends Arrays
 {
     /**
      * Registry instance
