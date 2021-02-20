@@ -6,7 +6,6 @@ namespace Atomastic\Registry;
 
 use Atomastic\Arrays\Arrays;
 use Atomastic\Macroable\Macroable;
-use Exception;
 
 class Registry extends Arrays
 {
