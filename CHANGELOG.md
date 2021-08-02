@@ -1,3 +1,7 @@
+<a name="3.0.1"></a>
+# [3.0.1](https://github.com/atomastic/registry) (2021-08-02)
+* fix issue with creating macros
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/atomastic/registry) (2021-02-20)
 * Move to PHP 7.4

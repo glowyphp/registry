@@ -5,12 +5,9 @@ declare(strict_types=1);
 namespace Atomastic\Registry;
 
 use Atomastic\Arrays\Arrays;
-use Atomastic\Macroable\Macroable;
 
 class Registry extends Arrays
 {
-    use Macroable;
-
     /**
      * Registry instance
      */
