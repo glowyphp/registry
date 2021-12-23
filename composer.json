@@ -1,13 +1,13 @@
 {
-    "name": "atomastic/registry",
+    "name": "glowy/registry",
     "description": "Registry Component provides a fluent, object-oriented interface for storing data globally in a well managed fashion, helping to prevent global meltdown.",
     "license": "MIT",
     "keywords": [
-        "Registry", "registry", "php-registry", "php", "atomastic"
+        "Registry", "registry", "php-registry", "php", "glowyphp", "glowy"
     ],
     "support": {
-      "source": "https://github.com/atomastic/registry",
-      "issues": "https://github.com/atomastic/registry/issues"
+      "source": "https://github.com/glowyphp/registry",
+      "issues": "https://github.com/glowyphp/registry/issues"
     },
     "authors": [
         {
@@ -18,19 +18,20 @@
     ],
     "require": {
         "php": "^7.4 || ^8.0",
-        "atomastic/arrays": "^3.0"
+        "glowy/arrays": "^4.0"
     },
     "autoload":{
         "psr-4": {
-            "Atomastic\\Registry\\": "src/"
+            "Glowy\\Registry\\": "src/"
         },
         "files": [
             "src/helpers.php"
         ]
     },
     "require-dev": {
-        "doctrine/coding-standard": "8.2.0",
-        "pestphp/pest": "^1.0.2",
-        "phpstan/phpstan": "^0.12.77"
+        "doctrine/coding-standard": "9.0.0",
+        "pestphp/pest": "^1.21.1",
+        "phpstan/phpstan": "^1.2.0",
+        "symfony/var-dumper": "^5.4.0"
     }
 }

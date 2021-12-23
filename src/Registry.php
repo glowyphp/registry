@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Atomastic\Registry;
+namespace Glowy\Registry;
 
-use Atomastic\Arrays\Arrays;
+use Glowy\Arrays\Arrays;
 
 class Registry extends Arrays
 {

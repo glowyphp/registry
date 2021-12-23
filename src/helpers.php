@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Atomastic\Registry\Registry;
+use Glowy\Registry\Registry;
 
 if (! function_exists('registry')) {
     /**
