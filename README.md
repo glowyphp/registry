@@ -1,6 +1,6 @@
-<h1 align="center">Registry Component</h1>
+<h1 align="center">Registry</h1>
 <p align="center">
-Registry Component provides a fluent, object-oriented interface for storing data globally in a well managed fashion, helping to prevent global meltdown.
+Registry Package provides a fluent, object-oriented interface for storing data globally in a well managed fashion, helping to prevent global meltdown.
 </p>
 <p align="center">
 <a href="https://github.com/glowyphp/registry/releases"><img alt="Version" src="https://img.shields.io/github/release/glowyphp/registry.svg?label=version&color=green"></a> <a href="https://github.com/glowyphp/registry"><img src="https://img.shields.io/badge/license-MIT-blue.svg?color=green" alt="License"></a> <a href="https://packagist.org/packages/glowy/registry"><img src="https://poser.pugx.org/glowy/registry/downloads" alt="Total downloads"></a> <img src="https://github.com/glowyphp/registry/workflows/Static%20Analysis/badge.svg?branch=dev"> <img src="https://github.com/glowyphp/registry/workflows/Tests/badge.svg">
@@ -18,7 +18,7 @@ composer require glowy/registry
 ```
 
 ### Resources
-* [Documentation](https://digital.flextype.org/glowyphp/components/registry)
+* [Documentation](https://digital.flextype.org/glowyphp/packages/registry)
 
 ### Tests
 
