@@ -18,7 +18,7 @@ composer require glowy/registry
 ```
 
 ### Resources
-* [Documentation](https://digital.flextype.org/glowyphp/packages/registry)
+* [Documentation](https://awilum.github.io/glowyphp/registry)
 
 ### Tests
 
