@@ -3,6 +3,7 @@
 declare(strict_types = 1);
 
 use Glowy\Registry\Registry;
+use function Glowy\Registry\registry;
 
 test('test getInstance() method', function() {
     $this->assertInstanceOf(Registry::class, Registry::getInstance());

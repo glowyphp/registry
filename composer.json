@@ -12,13 +12,13 @@
     "authors": [
         {
             "name": "Sergey Romanenko",
-            "email": "sergey.romanenko@flextype.org",
-            "homepage": "https://github.com/Awilum"
+            "email": "awilum@msn.com",
+            "homepage": "https://awilum.github.io"
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
-        "glowy/arrays": "^4.0"
+        "php": "^8.1",
+        "glowy/arrays": "^5.0"
     },
     "autoload":{
         "psr-4": {
@@ -30,8 +30,18 @@
     },
     "require-dev": {
         "doctrine/coding-standard": "9.0.0",
-        "pestphp/pest": "^1.21.1",
-        "phpstan/phpstan": "^1.2.0",
-        "symfony/var-dumper": "^5.4.0"
+        "pestphp/pest": "^1.21.3",
+        "phpstan/phpstan": "^1.8.0",
+        "victorjonsson/markdowndocs": "dev-master"
+    },
+    "config": {
+        "apcu-autoloader": true,
+        "optimize-autoloader": true,
+        "platform-check": false,
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
