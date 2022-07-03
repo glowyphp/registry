@@ -1,5 +1,10 @@
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/glowyphp/registry) (2022-07-03)
+* Moving to PHP 8.1
+* Use union types.
+
 <a name="4.0.0"></a>
-# [4.0.0](https://github.com/glowyphp/csrf) (2021-12-23)
+# [4.0.0](https://github.com/glowyphp/registry) (2021-12-23)
 * Released under Glowy PHP Organization.
 * Add PHP 8.1 support.
 * Updated dependencies.

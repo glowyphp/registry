@@ -1,10 +1,10 @@
-<h1 align="center">Registry Component</h1>
+<h1 align="center">Registry</h1>
 <p align="center">
-Registry Component provides a fluent, object-oriented interface for storing data globally in a well managed fashion, helping to prevent global meltdown.
+Registry Package provides a fluent, object-oriented interface for storing data globally in a well managed fashion, helping to prevent global meltdown.
 </p>
+
 <p align="center">
-<a href="https://github.com/glowyphp/registry/releases"><img alt="Version" src="https://img.shields.io/github/release/glowyphp/registry.svg?label=version&color=green"></a> <a href="https://github.com/glowyphp/registry"><img src="https://img.shields.io/badge/license-MIT-blue.svg?color=green" alt="License"></a> <a href="https://packagist.org/packages/glowy/registry"><img src="https://poser.pugx.org/glowy/registry/downloads" alt="Total downloads"></a> <img src="https://github.com/glowyphp/registry/workflows/Static%20Analysis/badge.svg?branch=dev"> <img src="https://github.com/glowyphp/registry/workflows/Tests/badge.svg">
-  <a href="https://app.codacy.com/gh/glowy/registry?utm_source=github.com&utm_medium=referral&utm_content=glowy/registry&utm_campaign=Badge_Grade_Dashboard"><img src="https://api.codacy.com/project/badge/Grade/72b4dc84c20145e1b77dc0004a3c8e3d"></a> <a href="https://codeclimate.com/github/glowy/registry/maintainability"><img src="https://api.codeclimate.com/v1/badges/a4c673a4640a3863a9a4/maintainability" /></a> <img src="http://poser.pugx.org/glowy/registry/require/php">
+<img src="https://img.shields.io/badge/license-MIT-blue.svg?label=License" alt="License MIT"> <a href="https://packagist.org/packages/glowy/registry"><img src="https://poser.pugx.org/glowy/registry/downloads" alt="Total downloads"></a> <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/glowyphp/registry?label=Stars"> <img alt="GitHub forks" src="https://img.shields.io/github/forks/glowyphp/registry?label=Forks"> <a href="https://hitsofcode.com"><img alt="Hits of Code" src="https://hitsofcode.com/github/glowyphp/registry?branch=5.x"></a> <a href="https://discord.gg/ewQkqgfBAc"><img src="https://img.shields.io/discord/423097982498635778.svg?logo=discord&label=Discord%20Chat" alt="Discord"></a>
 </p>
 
 <br>
@@ -18,7 +18,7 @@ composer require glowy/registry
 ```
 
 ### Resources
-* [Documentation](https://digital.flextype.org/glowyphp/components/registry)
+* [Documentation](https://awilum.github.io/glowyphp/registry)
 
 ### Tests
 
@@ -30,4 +30,4 @@ Run tests
 
 ### License
 [The MIT License (MIT)](https://github.com/glowyphp/registry/blob/master/LICENSE.txt)
-Copyright (c) 2021 [Sergey Romanenko](https://github.com/Awilum)
+Copyright (c) 2022 [Sergey Romanenko](https://github.com/Awilum)

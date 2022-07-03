@@ -11,12 +11,12 @@ class Registry extends Arrays
     /**
      * Registry instance
      */
-    private static ?Registry $instance = null;
+    private static Registry|null $instance = null;
 
     /**
      * Registry storage
      */
-    private static ?Arrays $storage = null;
+    private static Arrays|null $storage = null;
 
     /**
      * Gets the instance via lazy initialization (created on first usage)
